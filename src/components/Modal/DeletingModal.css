@@ -1,0 +1,40 @@
+
+.modal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_modal {
+    background-color: #eee;
+    border: none;
+    opacity: 0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgb(44, 44, 88);
+    color: rgb(37, 37, 134);
+}
+
+.title {
+    padding: 10px;
+    /* display: block; */
+}
+
+.buttons_unit {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button {
+    /* justify-content: center; */
+    display: inline-flex;
+}
+
+.yes {
+    align-self: start;
+    color: red;
+}
+
+.no {
+    align-self: end;
+}

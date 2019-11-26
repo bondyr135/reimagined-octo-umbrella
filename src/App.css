@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  height: 100 vh;
+  background-color: #ccc;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-areas: 
+                      "map sidebar";
+  position: fixed;
 }
 
 .App-logo {
@@ -30,4 +37,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#map {
+  /* border: 5px solid rgb(17, 17, 109); */
+  grid-column: 1 / 2;
+  grid-area: map;
+  /* height: 100 vh;
+  width: 80 vw; */
+}
+
+#sidebar {
+  grid-area: sidebar;
+  grid-column: 2/ 3;
 }

@@ -1,0 +1,9 @@
+#map {
+    /* height: 100 vh;
+    width: 80 vw; */
+    border: 2px solid rgb(20, 20, 122);
+}
+
+.location_marker {
+    color: red;
+}

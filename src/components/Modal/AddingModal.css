@@ -1,0 +1,68 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    margin: 10px;
+    width: 500px;
+    border-radius: 1%;
+}
+
+.paper {
+    background-color: #eee;
+    border: 2px solid rgb(24, 11, 82);
+    box-shadow: 5px;
+    padding: 4% 4% 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 500px;
+    border-radius: 1%;
+  }
+
+.input {
+    width: 100%;
+    margin: 15px;
+    min-width: 100%;
+}
+
+#input:focus {
+    color: rgb(40, 175, 40);
+}
+
+.furniture {
+    min-width: 80%;
+}
+
+.button_remove {
+    width: 20%;
+}
+
+.more_furniture_button {
+    width: 50%;
+    align-self: center;
+}
+
+.furniture_input_button {
+    display: flex;
+    flex-direction: row;
+}
+
+.all_furniture {
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    width: 50px;
+    justify-content: center;
+}

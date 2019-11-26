@@ -1,0 +1,12 @@
+.list_component {
+    text-align: center;
+}
+
+.hightlight {
+    color: rgb(235, 173, 193);
+}
+
+.button {
+    border: 1px solid black;
+    color: rgb(236, 158, 158);
+}
