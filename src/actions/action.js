@@ -49,7 +49,6 @@ export const changeOpen = (payload) => {
 }
 
 export const deleteModal = (payload) => {
-    console.log(payload);
     return {
         type: actions.DELETE_MODAL,
         payload

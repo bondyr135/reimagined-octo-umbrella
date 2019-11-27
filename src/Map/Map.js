@@ -7,7 +7,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { Map, TileLayer } from 'react-leaflet';
 
-import { addLocation, toggleModal, deleteModal } from '../actions/action';
+import { addLocation, toggleModal, deleteModal, removeLocation } from '../actions/action';
 import AddingModal from '../components/Modal/AddingModal';
 import DeletingModal from '../components/Modal/DeletingModal';
 import MarkerComponent from '../components/MarkerComponent/MarkerComponent';
@@ -21,7 +21,8 @@ const mapStateToProps = state => {
     return {
         apartments: state.locations.locations,
         isModalOpen: state.toggleModal.openModal,
-        isDeleteModalOpen: state.deletingModal.deleteOpen
+        isDeleteModalOpen: state.deletingModal.deleteOpen,
+        id: state.deletingModal.IDtoDelete
     }
 }
 
@@ -29,7 +30,8 @@ function mapDispatchToProps(dispatch) {
     return {
         addLocation: location => dispatch(addLocation(location)),
         toggleModal: (location) => dispatch(toggleModal(location)),
-        toggleDeleteModal: () => dispatch(deleteModal())
+        toggleDeleteModal: () => dispatch(deleteModal()),
+        removeLocation: (toDelete) => dispatch(removeLocation(toDelete))
     };
 }
 
@@ -64,7 +66,7 @@ const MapComponent = (props) => {
     }
 
     const deleteLocation = (event) => {
-        // console.log('delete location', event.target);
+        props.removeLocation(props.id);
         props.toggleDeleteModal();
     }
 
@@ -91,7 +93,7 @@ const MapComponent = (props) => {
             <DeletingModal
                 open={props.isDeleteModalOpen}
                 justClose={closeDeletingModal}
-                actualDelete={deleteLocation}
+                actualDelete={(id) => deleteLocation(id)}
             />
         </Map>
     )

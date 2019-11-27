@@ -11,11 +11,11 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        openedPanelId: state.open.opened
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         openedPanelId: state.open.opened
+//     }
+// }
 
 
 /////////////////////////////////////////////////////////////////////////////

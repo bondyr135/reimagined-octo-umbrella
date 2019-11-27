@@ -32,7 +32,7 @@ const DeletingModal = (props) => {
                 <div className='delete_modal'>
                     <Typography style={{display: 'block'}} variant='h5' className='title'>Do you want to delet the apartment in {props.address}</Typography>
                     <div className='buttons_unit'>
-                        <Button onClick={props.actualDelete} style={{...buttonStyle, ...yesButton}} className='button yes'>Yes, delete it</Button>
+                        <Button onClick={(id) => props.actualDelete(id)} style={{...buttonStyle, ...yesButton}} className='button yes'>Yes, delete it</Button>
                         <Button onClick={props.justClose} style={buttonStyle} className='button no'>Nevermind</Button>
                     </div>
                 </div>

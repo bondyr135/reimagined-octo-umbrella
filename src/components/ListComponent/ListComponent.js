@@ -32,7 +32,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-//////////////////////////////////////////////////
+///////////////////////////////////////////////////
 const ListComponent = (props) => {
 
     const keyID = props.address + props.rent.toString();
@@ -46,7 +46,7 @@ const ListComponent = (props) => {
     }
 
     const highlight = props.openedID === keyID ? 'rgb(235, 173, 193)' : '';
-    // console.log(props.name);
+    
     return (
         <ExpansionPanel
             className={"list_component"}

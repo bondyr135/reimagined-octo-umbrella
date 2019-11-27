@@ -18,14 +18,13 @@ axiosInstance.get(
     'https://jp3-apartments-redux.firebaseio.com/locations.json'
 )
 .then(res => {
-    // console.log(res);
+    
     initialState.locations = res.data ? res.data : [];
 })
 .catch(rej => console.log(rej));
 
 const manageLocationReducer = (state = initialState, action) => {
-    // console.log(action.payload);
-    // console.log(state.locations);
+    
     switch (action.type) {
         case actions.ADD_LOCATION:
             const newLocations =  state.locations.concat([action.payload]);
@@ -40,14 +39,19 @@ const manageLocationReducer = (state = initialState, action) => {
             )
             return newState;
         case actions.REMOVE_LOCATION:
-            console.log('!!!')
-            return Object.assign(
+            
+            const newState2 = Object.assign(
                 {},
                 state,
                 { locations: state.locations.filter(loc => {
-                    console.log(loc)
+                    
                     return loc.address !== action.payload}) }
             )
+            axiosInstance.put(
+                'https://jp3-apartments-redux.firebaseio.com/locations.json',
+                JSON.stringify(newState2.locations)
+            )
+                return newState2
         case actions.REMOVE_ALL_LOCATIONS:
             console.log('Deleting all locations');
             const newState3 =  Object.assign(
